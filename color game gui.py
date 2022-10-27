@@ -1,4 +1,5 @@
-# create a game that takes two random colors (buttons w randomized r,g,b background) and has 3 options of what the possible color/outcome, and the user guessed which one is right, gets points if right
+# a game in which the user guesses what color is the 'average' of two random colors
+
 import random
 from tkinter import *
 import sys
@@ -8,7 +9,6 @@ def btn_Click1():
     global y
     if y == 3:
         button1.config(text = "CORRECT")   
-        #description.config(text = "wins: " + str(clickCount))
     else:
         button1.config(text = "INCORRECT")
     return
@@ -43,7 +43,7 @@ title.grid(row = 0, column = 0)
 description = Label(root, text = "If combined, what will the two colors above make?", font = ("Calibri", 12, "italic"), fg = "grey52")
 description.grid(row = 4, column = 0, columnspan = 5)
 
-#colors
+#COLORS
 color = []
 counter = 0
 while (counter <=255):
@@ -64,8 +64,6 @@ blue = int((c+f)/2)
 
 
 #BUTTONS
-
-
 original1 = Button(root, highlightbackground = '#'+'{:02x}{:02x}{:02x}'.format(a,b,c), height = 10, width = 20)
 original1.grid(row = 2, column = 0, columnspan = 5)
 original2 = Button(root, highlightbackground = '#' + '{:02x}{:02x}{:02x}'.format(d,e,f), height = 10, width = 20)
